@@ -2,10 +2,9 @@
 using TextAnalysis.Domain.Interfaces;
 using TextAnalysis.Infrastructure.Data;
 
-namespace TextAnalysis.Infrastructure.Interfaces
+namespace TextAnalysis.Infrastructure.Interfaces;
+public class EfRepository<T> : RepositoryBase<T>, IReadRepository<T>, IRepository<T> where T : class, IAggregateRoot
 {
-    public class EfRepository<T> : RepositoryBase<T>, IReadRepository<T>, IRepository<T> where T : class
-    {
-        public EfRepository(TextAnalysisDBContext dbContext) : base(dbContext) { }
-    }
+    public EfRepository(TextAnalysisDBContext dbContext) : base(dbContext) { }
 }
+

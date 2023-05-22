@@ -7,10 +7,12 @@ namespace TextAnalysis.Web
     {
         public static IServiceCollection AddWeb(this IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.AddLogging();
+
             return services;
         }
     }

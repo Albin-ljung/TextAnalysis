@@ -1,0 +1,8 @@
+@hostname=http://localhost:5048
+
+POST {{hostname}}/sentence
+Content-Type: application/json
+
+{
+    "sentence": "nu skapar jag en ny mening"
+}

@@ -1,13 +1,16 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using TextAnalysis.Application.Services;
+using TextAnalysis.Domain.Interfaces;
 
-namespace TextAnalysis.Application
+namespace TextAnalysis.Application;
+public static class StartupSetup
 {
-    public static class StartupSetup
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
-        {
-            //services.AddScoped<IIssueSearchService, IssueSearchService>();
-            return services;
-        }
+        services.AddScoped<ISentenceService, SentenceService>();
+        services.AddScoped<ICommonWordService, CommonWordService>();
+
+        return services;
     }
 }
+

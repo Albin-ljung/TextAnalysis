@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis.Web", "TextAnalysis.Web\TextAnalysis.Web.csproj", "{415721BC-FB86-4458-8D5E-442AE3A9E909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAnalysis.Web", "TextAnalysis.Web\TextAnalysis.Web.csproj", "{415721BC-FB86-4458-8D5E-442AE3A9E909}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis.Infrastructure", "TextAnalysis.Infrastructure\TextAnalysis.Infrastructure.csproj", "{6B2AD179-83AD-4E29-9792-799387E42D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAnalysis.Infrastructure", "TextAnalysis.Infrastructure\TextAnalysis.Infrastructure.csproj", "{6B2AD179-83AD-4E29-9792-799387E42D81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis.Domain", "TextAnalysis.Domain\TextAnalysis.Domain.csproj", "{D215E5DF-ECFC-4179-AE8F-54E511FDF93A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAnalysis.Domain", "TextAnalysis.Domain\TextAnalysis.Domain.csproj", "{D215E5DF-ECFC-4179-AE8F-54E511FDF93A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis.Application", "TextAnalysis.Application\TextAnalysis.Application.csproj", "{DB9E2F21-D685-4474-8B22-97BF44C49DB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAnalysis.Application", "TextAnalysis.Application\TextAnalysis.Application.csproj", "{DB9E2F21-D685-4474-8B22-97BF44C49DB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5E67BBB0-C4C1-4C15-9DC8-56C48D1B7A1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis.FunctionalTest", "Tests\TextAnalysis.FunctionalTest\TextAnalysis.FunctionalTest.csproj", "{A18BAE7E-03DD-4CB3-BE6F-FB1E6E839CAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{DB9E2F21-D685-4474-8B22-97BF44C49DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB9E2F21-D685-4474-8B22-97BF44C49DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB9E2F21-D685-4474-8B22-97BF44C49DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A18BAE7E-03DD-4CB3-BE6F-FB1E6E839CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A18BAE7E-03DD-4CB3-BE6F-FB1E6E839CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A18BAE7E-03DD-4CB3-BE6F-FB1E6E839CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A18BAE7E-03DD-4CB3-BE6F-FB1E6E839CAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A18BAE7E-03DD-4CB3-BE6F-FB1E6E839CAE} = {5E67BBB0-C4C1-4C15-9DC8-56C48D1B7A1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9CA5D185-CA67-4A34-B4FB-52B408F817EF}

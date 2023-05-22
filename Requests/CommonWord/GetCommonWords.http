@@ -1,0 +1,3 @@
+@hostname = http://localhost:5048
+
+GET {{hostname}}/commonWords

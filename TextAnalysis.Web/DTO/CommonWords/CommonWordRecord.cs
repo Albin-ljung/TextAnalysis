@@ -1,0 +1,1 @@
+public record CommonWordDTO(string word, int frequency);

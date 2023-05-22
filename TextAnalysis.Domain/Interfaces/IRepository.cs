@@ -1,8 +1,7 @@
 ﻿using Ardalis.Specification;
 
-namespace TextAnalysis.Domain.Interfaces
+namespace TextAnalysis.Domain.Interfaces;
+public interface IRepository<T> : IRepositoryBase<T> where T : class, IAggregateRoot
 {
-    public interface IRepository<T> : IRepositoryBase<T> where T : class
-    {
-    }
 }
+

@@ -1,7 +1,6 @@
 ﻿
-namespace TextAnalysis.Domain.Interfaces
+namespace TextAnalysis.Domain.Interfaces;
+public interface IAggregateRoot
 {
-    public interface IAggregateRoot
-    {
-    }
 }
+

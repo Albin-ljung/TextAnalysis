@@ -1,9 +1,8 @@
 ﻿using TextAnalysis.Domain.TextSentenceAggregate.Enteties;
 
-namespace TextAnalysis.Domain.Interfaces
+namespace TextAnalysis.Domain.Interfaces;
+public interface ISentenceService
 {
-    public interface ISentenceService
-    {
-        Task<TextSentence> CreateSentence(TextSentence sentence);
-    }
+    Task<TextSentence> CreateSentence(TextSentence sentence);
 }
+

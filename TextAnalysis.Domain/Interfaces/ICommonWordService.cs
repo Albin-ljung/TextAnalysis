@@ -1,6 +1,12 @@
-﻿namespace TextAnalysis.Domain.Interfaces
+﻿using TextAnalysis.Domain.CommonWordAggregate.Enteties;
+using TextAnalysis.Domain.TextSentenceAggregate.Enteties;
+
+namespace TextAnalysis.Domain.Interfaces;
+public interface ICommonWordService
 {
-    public interface ICommonWordService
-    {
-    }
+    List<CommonWord> CalcCommonWordsFromSentence(TextSentence sentence);
+    Task<List<CommonWord>> GetAllCommonWords();
+    void CreateOrUpdateWordWithFrequency(TextSentence commonWord);
+    Task<List<CommonWord>> GetCommonWordsBySearchPhrace(string searchPhrace);
 }
+
