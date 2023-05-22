@@ -1,0 +1,4 @@
+@hostname=http://localhost:5048
+
+GET {{hostname}}/commonwords/search?searchphrase=This
+Content-Type: application/json
