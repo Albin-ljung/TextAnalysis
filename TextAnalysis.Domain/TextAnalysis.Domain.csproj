@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CommonWordAggregate\Specifications\" />
-    <Folder Include="TextSentenceAggregate\Specifications\" />
+    <Compile Remove="TextSentenceAggregate\Specifications\**" />
+    <EmbeddedResource Remove="TextSentenceAggregate\Specifications\**" />
+    <None Remove="TextSentenceAggregate\Specifications\**" />
   </ItemGroup>
 
   <ItemGroup>

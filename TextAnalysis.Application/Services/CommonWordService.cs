@@ -83,13 +83,17 @@ public class CommonWordService : ICommonWordService
         }
     }
 
-    public async Task<List<CommonWord>> GetCommonWordsBySearchPhrace(string searchPhrace)
+    public async Task<List<CommonWord>> GetCommonWordsBySearchPhrase(string searchPhrace)
     {
-        var commonWordsBySearchPhraceSpec = new GetCommonWordsByNameSpec(searchPhrace);
-        var commonWords = await _commonWordRepository.ListAsync(commonWordsBySearchPhraceSpec);
-
-        if (commonWords == null) return new List<CommonWord>();
-
-        return commonWords;
+        var commonWordsBySearchPhraceSpec = new GetCommonWordsBySearchPhraseSpec(searchPhrace);
+        try
+        {
+           return await _commonWordRepository.ListAsync(commonWordsBySearchPhraceSpec);
+        }
+        catch(Exception e)
+        {
+            _logger.LogError($"An error occurred while trying to get common word by search phrase. Message: {e.Message}. Stacktrace: {e.StackTrace}.");
+            throw;
+        }
     }
 }

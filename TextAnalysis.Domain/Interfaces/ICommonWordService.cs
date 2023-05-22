@@ -7,6 +7,6 @@ public interface ICommonWordService
     List<CommonWord> CalcCommonWordsFromSentence(TextSentence sentence);
     Task<List<CommonWord>> GetAllCommonWords();
     void CreateOrUpdateWordWithFrequency(TextSentence commonWord);
-    Task<List<CommonWord>> GetCommonWordsBySearchPhrace(string searchPhrace);
+    Task<List<CommonWord>> GetCommonWordsBySearchPhrase(string searchPhrace);
 }
 

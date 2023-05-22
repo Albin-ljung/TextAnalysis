@@ -22,4 +22,14 @@ public class CommonWordsController : ControllerBase
             CommonWords = commonWords.Select(word => new CommonWordDTO(word.Name, word.Frequency)).OrderByDescending(word => word.frequency).ToList()
         });
     }
+
+    [HttpGet("search")]
+    public async Task<ActionResult<CommonWordsReponseDTO>> Get(string searchPhrase)
+    {
+        var commonWords = await _commonWordService.GetCommonWordsBySearchPhrase(searchPhrase);
+        return Ok(new SentenceResponseDTO
+        {
+            CommonWords = commonWords.Select(word => new CommonWordDTO(word.Name, word.Frequency)).OrderByDescending(word => word.frequency).ToList()
+        });
+    }
 }

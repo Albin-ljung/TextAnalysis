@@ -5,7 +5,9 @@ using TextAnalysis.Web;
 var builder = WebApplication.CreateBuilder(args);
 
 
-string? connectionString = builder.Configuration.GetConnectionString("SqliteConnection");
+string? connectionString = builder.Environment.EnvironmentName == "Development" ?
+    builder.Configuration.GetConnectionString("SqliteConnection")
+    : builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services
     .AddWeb()
