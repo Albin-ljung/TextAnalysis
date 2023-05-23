@@ -17,7 +17,7 @@ public class CommonWordService : ICommonWordService
         _logger = logger;
     }
 
-    public List<CommonWord> CalcCommonWordsFromSentence(TextSentence textSentence)
+    public List<CommonWord> CalcCommonWordsFromSentence(TextSentence textSentence, int count)
     {
         string[] words = textSentence.Sentence.ToLower().Split(new char[] { ' ', '.', ',' }, StringSplitOptions.RemoveEmptyEntries);
         List<CommonWord> commonWords = new List<CommonWord>();
@@ -31,7 +31,7 @@ public class CommonWordService : ICommonWordService
                 commonWords.Add(new CommonWord(word));
         }
 
-        return commonWords;
+        return commonWords.OrderByDescending(word => word.Frequency).Take(count).ToList();
     }
 
     public async Task<List<CommonWord>> GetAllCommonWords()

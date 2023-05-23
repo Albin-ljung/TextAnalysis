@@ -33,7 +33,7 @@ public class SentenceController : ControllerBase
         var createdSentence = await _sentenceService.CreateSentence(newSentence);
         if (createdSentence == null) return BadRequest();
 
-        var commonWords = _commonWordService.CalcCommonWordsFromSentence(createdSentence);
+        var commonWords = _commonWordService.CalcCommonWordsFromSentence(createdSentence, 10);
         _commonWordService.CreateOrUpdateWordWithFrequency(createdSentence);
 
         return Ok(new SentenceResponseDTO
